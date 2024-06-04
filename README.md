@@ -8,7 +8,6 @@ This is a solution to the [Contact form challenge on Frontend Mentor](https://gi
   - [Table of contents](#table-of-contents)
   - [Overview](#overview)
     - [The challenge](#the-challenge)
-    - [Links](#links)
   - [My process](#my-process)
     - [Built with](#built-with)
     - [What I learned](#what-i-learned)
@@ -30,10 +29,6 @@ Users should be able to:
 - Have inputs, error messages, and the success message announced on their screen reader
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
-
-### Links
-
-- Solution URL: [Add solution URL here](https://github.com/Bas3L3ss/frontend-challange-2-2-)
 
 ## My process
 
@@ -59,6 +54,7 @@ I can reuse this layout for future project, most of my code can be further enhan
 
 ## Author
 
+- web: https://frontend-challange-baseless.netlify.app/
 - Frontend Mentor - [@Bas3L3ss](https://www.frontendmentor.io/profile/Bas3L3ss)
 - Github - [@B3seL3ss](https://github.com/Bas3L3ss)
 
