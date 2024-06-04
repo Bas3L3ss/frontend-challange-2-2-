@@ -95,6 +95,9 @@ body {
         height: 50px;
         margin-left: 4px;
       }
+      &:hover:not(.no-hover) {
+        cursor: pointer;
+      }
     }
 
     &-radioBox {
@@ -108,13 +111,64 @@ body {
       &:hover {
         cursor: pointer;
       }
+      & label {
+        &.radio {
+          background-image: url(assets/images/icon-radio.svg);
+          width: 20px;
+          height: 20px;
+          background-repeat: no-repeat;
+          &.active {
+            background-image: url(assets/images/icon-radio-selected.svg);
+          }
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
     }
     &-consent {
       display: flex;
       align-items: center;
-      gap: 25px;
-      & input {
+      gap: 20px;
+      & .checkbox {
+        width: 17px;
+        aspect-ratio: 1/1;
+        background-image: url(assets/images/icon-checkbox-uncheck.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+        &.active {
+          background-image: url(assets/images/icon-checkbox-check.svg);
+        }
+      }
+      & label.required {
+        margin: 0;
       }
     }
+  }
+}
+.successful {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $Grey-900;
+  border-radius: 10px;
+  color: $White;
+  padding: 25px 40px;
+  transition: 0.5s ease-in-out;
+  &.active {
+    top: 50px;
+  }
+  & h3 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  & p {
+    font-weight: 400;
+    font-size: 1rem;
   }
 }

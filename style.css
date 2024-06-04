@@ -93,6 +93,9 @@ body {
   height: 50px;
   margin-left: 4px;
 }
+.form__formRow label.required:hover:not(.no-hover) {
+  cursor: pointer;
+}
 .form__formRow-radioBox {
   display: flex;
   width: 100%;
@@ -105,8 +108,60 @@ body {
 .form__formRow-radioBox:hover {
   cursor: pointer;
 }
+.form__formRow-radioBox label.radio {
+  background-image: url(assets/images/icon-radio.svg);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+.form__formRow-radioBox label.radio.active {
+  background-image: url(assets/images/icon-radio-selected.svg);
+}
+.form__formRow-radioBox label:hover {
+  cursor: pointer;
+}
 .form__formRow-consent {
   display: flex;
   align-items: center;
-  gap: 25px;
+  gap: 20px;
+}
+.form__formRow-consent .checkbox {
+  width: 17px;
+  aspect-ratio: 1/1;
+  background-image: url(assets/images/icon-checkbox-uncheck.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+}
+.form__formRow-consent .checkbox.active {
+  background-image: url(assets/images/icon-checkbox-check.svg);
+}
+.form__formRow-consent label.required {
+  margin: 0;
+}
+
+.successful {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: hsl(187, 24%, 22%);
+  border-radius: 10px;
+  color: hsl(0, 0%, 100%);
+  padding: 25px 40px;
+  transition: 0.5s ease-in-out;
+}
+.successful.active {
+  top: 50px;
+}
+.successful h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.successful p {
+  font-weight: 400;
+  font-size: 1rem;
 }/*# sourceMappingURL=style.css.map */

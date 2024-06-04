@@ -55,7 +55,9 @@
                 id="General-Enquiry"
                 name="querytype"
                 value=" General Enquiry"
+                class="hidden"
               />
+              <label for="General-Enquiry" class="radio"></label>
               <label for="General-Enquiry">General Enquiry</label>
             </div>
             <div class="form__formRow-radioBox">
@@ -64,7 +66,9 @@
                 id="Support-Request"
                 name="querytype"
                 value="Support Request"
+                class="hidden"
               />
+              <label for="Support-Request" class="radio"></label>
               <label for="Support-Request">Support Request</label>
             </div>
           </div>
@@ -74,7 +78,8 @@
           <input type="text" id="message" name="message" />
         </div>
         <div class="form__formRow span-2 form__formRow-consent">
-          <input type="checkbox" name="consent" id="consent" />
+          <input type="checkbox" name="consent" id="consent" class="hidden" />
+          <label for="consent" class="checkbox"></label>
           <label for="consent" class="required no-block">
             I consent to being contacted by the team</label
           >
@@ -87,10 +92,12 @@
       <button type="submit">Submit</button>
     </form>
 
-    <div class="successful hidden">
-      <p>
-        Message Sent! Thanks for completing the form. We'll be in touch soon!
-      </p>
+    <div class="successful">
+      <h3>
+        <span><img src="assets/images/icon-success-check.svg" alt="" /></span>
+        Message Sent!
+      </h3>
+      <p>Thanks for completing the form. We'll be in touch soon!</p>
     </div>
 
     <div class="attribution">
