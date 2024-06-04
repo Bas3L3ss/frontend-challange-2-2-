@@ -63,11 +63,11 @@ function handleForm(e) {
   setInterval(() => {
     successfulDom.classList.remove("active");
   }, 3500);
+  console.log(formFinalObject);
 }
 function validateForm(data, flag) {
   for (const [key, value] of Object.entries(data)) {
     let TargetDom = document.querySelector(`#${key}Alert`);
-    console.log(value);
     TargetDom.classList.remove("failed");
 
     if (value == "") {
