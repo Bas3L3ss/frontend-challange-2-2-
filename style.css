@@ -48,6 +48,24 @@ body {
   border-radius: 15px;
   padding: 40px 30px;
 }
+.form .failed .failedSpan {
+  display: block;
+}
+.form .failed :is(textarea, input) {
+  border: 1px solid hsl(0, 66%, 54%);
+  border-radius: 5px;
+  padding: 15px 10px;
+  font-size: 14px;
+}
+.form .failed :is(textarea, input):is(:focus, :focus-visible, :focus-within) {
+  outline: 2px solid hsl(0, 66%, 54%);
+}
+.form .failedSpan {
+  color: hsl(0, 66%, 54%);
+  display: none;
+  pointer-events: none;
+  margin-top: 5px;
+}
 .form button[type=submit] {
   width: 100%;
   border-radius: 10px;
@@ -130,11 +148,6 @@ body {
 }
 .form__formRow-radioBox label:hover {
   cursor: pointer;
-}
-.form__formRow-consent {
-  display: flex;
-  align-items: center;
-  gap: 20px;
 }
 .form__formRow-consent .checkbox {
   width: 17px;

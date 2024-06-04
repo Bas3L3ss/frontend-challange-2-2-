@@ -48,6 +48,26 @@ body {
   margin-block: 150px;
   border-radius: 15px;
   padding: 40px 30px;
+  & .failed {
+    & .failedSpan {
+      display: block;
+    }
+    & :is(textarea, input) {
+      border: 1px solid $Red;
+      border-radius: 5px;
+      padding: 15px 10px;
+      font-size: 14px;
+      &:is(:focus, :focus-visible, :focus-within) {
+        outline: 2px solid $Red;
+      }
+    }
+  }
+  & .failedSpan {
+    color: $Red;
+    display: none;
+    pointer-events: none;
+    margin-top: 5px;
+  }
   & button[type="submit"] {
     width: 100%;
     border-radius: 10px;
@@ -75,8 +95,7 @@ body {
       outline: 2px solid $Green-600;
     }
   }
-  & textarea {
-  }
+
   & h1 {
     margin: 0;
     font-weight: 700;
@@ -141,9 +160,6 @@ body {
       }
     }
     &-consent {
-      display: flex;
-      align-items: center;
-      gap: 20px;
       & .checkbox {
         width: 17px;
         aspect-ratio: 1/1;

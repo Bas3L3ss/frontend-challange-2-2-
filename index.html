@@ -31,22 +31,25 @@
     </style>
   </head>
   <body>
-    <form class="form" action="">
+    <form class="form" onsubmit="handleForm(event)">
       <h1>Contact Us</h1>
       <div class="form__grid">
-        <div class="form__formRow">
+        <div class="form__formRow" id="firstnameAlert">
           <label for="firstname" class="required"> First Name</label>
-          <input type="text" id="firstname" name="firstname" />
+          <input type="text" id="firstname" name="firstname" value="hi" />
+          <span class="failedSpan">this field is required</span>
         </div>
-        <div class="form__formRow">
+        <div class="form__formRow" id="lastnameAlert">
           <label for="lastname" class="required"> Last Name</label>
-          <input type="text" id="lastname" name="lastname" />
+          <input type="text" id="lastname" name="lastname" value="hi" />
+          <span class="failedSpan">this field is required</span>
         </div>
-        <div class="form__formRow span-2">
-          <label for="email" class="required"> Email Address</label>
-          <input type="email" id="email" name="email" />
+        <div class="form__formRow span-2" id="emailAlert">
+          <label for="email" class="required" value="hi"> Email Address</label>
+          <input type="email" id="email" name="email" value="d@yahoo.com" />
+          <span class="failedSpan">this field is required</span>
         </div>
-        <div class="form__formRow span-2">
+        <div class="form__formRow span-2" id="querytypeAlert">
           <label class="required">Query Type</label>
           <div class="flex">
             <div class="form__formRow-radioBox">
@@ -54,7 +57,7 @@
                 type="radio"
                 id="General-Enquiry"
                 name="querytype"
-                value=" General Enquiry"
+                value="General Enquiry"
                 class="hidden"
               />
               <label for="General-Enquiry" class="radio"></label>
@@ -72,18 +75,31 @@
               <label for="Support-Request">Support Request</label>
             </div>
           </div>
+          <span class="failedSpan span-2">this field is required</span>
         </div>
-        <div class="form__formRow span-2">
+        <div class="form__formRow span-2" id="messageAlert">
           <label for="message" class="required"> Message</label>
           <textarea name="message" id="message" rows="10"></textarea>
+          <span class="failedSpan">this field is required</span>
         </div>
-        <div class="form__formRow span-2 form__formRow-consent">
-          <input type="checkbox" name="consent" id="consent" class="hidden" />
-          <label for="consent" class="checkbox"></label>
-          <label for="consent" class="required no-block">
-            I consent to being contacted by the team</label
-          >
-          <span class="hidden"
+        <div
+          class="form__formRow span-2 form__formRow-consent"
+          id="consentAlert"
+        >
+          <input
+            type="checkbox"
+            name="consent"
+            id="consent"
+            class="hidden"
+            value="consent"
+          />
+          <div class="flex">
+            <label for="consent" class="checkbox"></label>
+            <label for="consent" class="required no-block">
+              I consent to being contacted by the team</label
+            >
+          </div>
+          <span class="hidden failedSpan"
             >To submit this form, please consent to being contacted</span
           >
         </div>
