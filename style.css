@@ -60,14 +60,19 @@ body {
 .form button[type=submit]:hover {
   cursor: pointer;
 }
-.form input:not([type=checkbox], [type=radio]) {
+.form input:not([type=checkbox], [type=radio]),
+.form textarea {
   width: 100%;
+  resize: none;
 }
-.form input {
+.form :is(textarea, input) {
   border: 1px solid hsl(169, 82%, 27%);
   border-radius: 5px;
   padding: 15px 10px;
   font-size: 14px;
+}
+.form :is(textarea, input):is(:focus, :focus-visible, :focus-within) {
+  outline: 2px solid hsl(169, 82%, 27%);
 }
 .form h1 {
   margin: 0;
@@ -107,6 +112,12 @@ body {
 }
 .form__formRow-radioBox:hover {
   cursor: pointer;
+}
+.form__formRow-radioBox.active {
+  background-color: hsl(148, 38%, 91%);
+}
+.form__formRow-radioBox.active label.radio {
+  background-image: url(assets/images/icon-radio-selected.svg);
 }
 .form__formRow-radioBox label.radio {
   background-image: url(assets/images/icon-radio.svg);
@@ -164,4 +175,36 @@ body {
 .successful p {
   font-weight: 400;
   font-size: 1rem;
+}
+
+@media (min-width: 374px) {
+  .form {
+    width: 90%;
+  }
+}
+@media (min-width: 750px) {
+  .form {
+    width: 75%;
+  }
+}
+@media (min-width: 950px) {
+  .form {
+    width: 65%;
+  }
+}
+@media (min-width: 1150px) {
+  .form {
+    width: 55%;
+  }
+}
+@media (max-width: 375px) {
+  .form {
+    width: 100%;
+  }
+  .form__formRow {
+    grid-column: span 2;
+  }
+  .form__formRow .flex {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=style.css.map */
