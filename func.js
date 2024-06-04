@@ -33,19 +33,62 @@ function handleForm(e) {
   const formObject = Object.fromEntries(formData);
   //to collect radio and checkbox elements
   let CheckAndRadio = {};
+  let currentName = "";
+  let nextPointer = "";
+  let valueFlag = "";
+  let CheckAndRadioIndexes = [];
   for (let i = 0; i < e.srcElement.length; i++) {
     if (
       e.srcElement[i].type === "radio" ||
       e.srcElement[i].type === "checkbox"
     ) {
-      CheckAndRadio = {
-        ...CheckAndRadio,
-        [e.srcElement[i].name]: e.srcElement[i].checked
-          ? e.srcElement[i].value
-          : "",
-      };
+      CheckAndRadioIndexes = [...CheckAndRadioIndexes, i];
     }
   }
+  //new array
+  for (let i = 0; i < CheckAndRadioIndexes.length; i++) {
+    let index = parseInt(CheckAndRadioIndexes[i]);
+    let indexPlus = parseInt(CheckAndRadioIndexes[i + 1]);
+    if (currentName == "") {
+      currentName = e.srcElement[index].name;
+      nextPointer = e.srcElement[indexPlus].name;
+    }
+
+    //start checking for flag
+    if (valueFlag == "") {
+      //data handling
+      CheckAndRadio = {
+        ...CheckAndRadio,
+        [e.srcElement[index].name]: e.srcElement[index].checked
+          ? e.srcElement[index].value
+          : "",
+      };
+
+      // if value exists
+      if (CheckAndRadio[e.srcElement[index].name] != "") {
+        valueFlag = "updated";
+      }
+    }
+    // after math
+    if (indexPlus) {
+      nextPointer = e.srcElement[indexPlus].name;
+    }
+    if (currentName != nextPointer) {
+      valueFlag = "";
+      currentName = nextPointer;
+    }
+    console.log(
+      `index:${index},
+      i:${i},
+      valueFlag:${valueFlag},
+      currentName:${currentName},
+      nextPointer:${nextPointer},
+      index + 1:${indexPlus}`
+    );
+    //end
+  }
+  console.log(CheckAndRadio);
+  console.log("end loop");
 
   const formFinalObject = {
     ...formObject,
