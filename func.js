@@ -77,18 +77,18 @@ function handleForm(e) {
       valueFlag = "";
       currentName = nextPointer;
     }
-    console.log(
-      `index:${index},
-      i:${i},
-      valueFlag:${valueFlag},
-      currentName:${currentName},
-      nextPointer:${nextPointer},
-      index + 1:${indexPlus}`
-    );
+    // console.log(
+    //   `index:${index},
+    //   i:${i},
+    //   valueFlag:${valueFlag},
+    //   currentName:${currentName},
+    //   nextPointer:${nextPointer},
+    //   index + 1:${indexPlus}`
+    // );
     //end
   }
-  console.log(CheckAndRadio);
-  console.log("end loop");
+  // console.log(CheckAndRadio);
+  // console.log("end loop");
 
   const formFinalObject = {
     ...formObject,
